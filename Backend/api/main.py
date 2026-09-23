@@ -9,11 +9,10 @@ from dataclasses import asdict
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
-from backend.engine.data_loader import load_districts, load_activities, load_rules
-from backend.engine.validator import Decision, validate
-from backend.engine.calculator import compute
-from backend.ai.explainer import explain_scenario
+from Backend.engine.data_loader import load_districts, load_activities, load_rules
+from Backend.engine.validator import Decision, validate
+from Backend.engine.calculator import compute
+from Backend.ai.explainer import explain_scenario
 
 app = FastAPI(title="Аким на 5 часов — API")
 
