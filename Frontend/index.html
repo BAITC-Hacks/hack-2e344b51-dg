@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Аким на 5 часов — симулятор управления городом</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>🏙️ Аким на 5 часов</h1>
+      <div class="budget-widget">
+        <span id="budget-label">Бюджет: 100 / 100</span>
+        <div class="budget-bar"><div id="budget-fill" class="budget-fill"></div></div>
+        <span id="decisions-label">Решений: 0 / 5</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="app">
+    <section id="setup-screen">
+      <p class="intro">
+        У вас есть виртуальный бюджет <strong>100 условных единиц</strong> и ровно
+        <strong>5 управленческих решений</strong>. Выберите мероприятия так, чтобы
+        поднять Astana Quality of Life Score — и не забудьте про самый слабый район.
+      </p>
+      <div id="activities-grid" class="activities-grid"></div>
+
+      <div class="cta-row">
+        <div id="validation-message" class="validation-message"></div>
+        <button id="submit-btn" disabled>Рассчитать сценарий</button>
+      </div>
+    </section>
+
+    <section id="result-screen" class="hidden">
+      <div class="result-header">
+        <div class="score-card">
+          <div class="score-label">Astana Quality of Life Score</div>
+          <div id="score-value" class="score-value">—</div>
+          <div id="score-delta" class="score-delta"></div>
+        </div>
+        <div class="score-breakdown" id="score-breakdown"></div>
+      </div>
+
+      <div class="result-columns">
+        <div class="result-col">
+          <h2>Показатели районов: до / после</h2>
+          <div id="radar-grid" class="radar-grid"></div>
+        </div>
+        <div class="result-col">
+          <h2>Объяснение AI-аналитика</h2>
+          <div id="ai-explanation" class="ai-explanation"></div>
+          <h3>Сработавшие синергии</h3>
+          <div id="synergies-list"></div>
+          <h3>Критические показатели (&lt;40)</h3>
+          <div id="critical-list"></div>
+        </div>
+      </div>
+
+      <div class="compare-section">
+        <h2>Сравнение сценариев</h2>
+        <p class="hint">Сценарий сохраняется автоматически при расчёте — попробуйте другой набор решений и сравните.</p>
+        <div id="compare-table"></div>
+      </div>
+
+      <div class="cta-row">
+        <button id="restart-btn">Собрать новый сценарий</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
