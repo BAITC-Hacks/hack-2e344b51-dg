@@ -1,0 +1,39 @@
+{
+  "horizon_quarters": 8,
+  "budget": 100,
+  "decisions_required": 5,
+  "max_per_direction": 2,
+  "critical_threshold": 40,
+  "weights": {
+    "T1": 0.10, "T2": 0.10,
+    "E1": 0.09, "E2": 0.11,
+    "S1": 0.11, "S2": 0.11,
+    "B1": 0.09, "B2": 0.09,
+    "C1": 0.10, "C2": 0.10
+  },
+  "synergies": [
+    {
+      "pair": ["M1", "M2"],
+      "bonus_indicator": "T1",
+      "bonus_value": 2,
+      "district_from": "M1"
+    },
+    {
+      "pair": ["M10", "M12"],
+      "bonus_indicator": "B1",
+      "bonus_value": 2,
+      "district_from": "M10"
+    },
+    {
+      "pair": ["M5", "M6"],
+      "bonus_indicator": "E2",
+      "bonus_value": 2,
+      "district_from": "M5"
+    }
+  ],
+  "incompatibilities": [
+    {"pair": ["M1", "M3"], "scope": "any_district", "reason": "M1 и M3 несовместимы: либо выделенные полосы (BRT), либо ЛРТ, в любом районе"},
+    {"pair": ["M4", "M7"], "scope": "same_district", "reason": "M4 и M7 несовместимы в одном районе: конфликт за участок"},
+    {"pair": ["M5", "M13"], "scope": "same_district", "reason": "M5 и M13 несовместимы в одном районе: дублирование программы"}
+  ]
+}
